@@ -1,12 +1,37 @@
 [
   {
-    "imagen": null,
+    "imagen": "gabriela.png",
     "nombre": "Gabriela Huertas Naranjo",
     "social":[
       {
         "red": "github",
         "enlace": "https://github.com/Gaby10"
       }
+    ]
+  },
+  {
+    "imagen": null,
+    "nombre": "Fernando López Carballeda",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/flcarballeda"
+      },
+      {
+        "red": "email",
+        "enlace": "fernando@lopez.org"
+      }
+    ]
+  },
+  {
+    "imagen": null,
+    "nombre": "Alicia Moreno OLiva",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/AliciaMorenoOLiva"
+      }
+
     ]
   }
 ]
