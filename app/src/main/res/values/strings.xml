@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FichApp</string>
+    <string name="accion_formativa">Esta aplicación ha sido desarrollada en el ámbito de una acción
+        formativa promovida por el Centro de Formación en Tecnologías de la Información
+        <a href="https://cftic.centrosdeformacion.empleo.madrid.org">CFTIC</a>.</string>
+    <string name="descripcion_logo_cas_training">Logo de Cas Training</string>
 </resources>

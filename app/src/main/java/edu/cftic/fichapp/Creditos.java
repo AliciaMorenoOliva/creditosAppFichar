@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -18,6 +21,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Creditos extends AppCompatActivity {
 
@@ -55,6 +59,8 @@ public class Creditos extends AppCompatActivity {
             recView = (RecyclerView) findViewById(R.id.RecView);
             recView.setHasFixedSize(true); //mejora el rendimiento, es aconsejable ponerlo
 
+            Collections.shuffle(datos); //hace que el orden en el que salen las filas sea aleatorio cada vez que carga la aplicacion
+
             adaptador = new AdapterCreditos(datos, this);
 
             recView.setAdapter(adaptador);
@@ -63,8 +69,24 @@ public class Creditos extends AppCompatActivity {
 
             recView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e( this.getClass().getCanonicalName(), "Error al procesar los datos de los creditos.",e);
         }
+        ImageView cas= (ImageView) findViewById(R.id.imageViewLogoCas); //txt is object of TextView
+        cas.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                browserIntent.setData(Uri.parse("https://www.cas-training.com/"));
+                startActivity(browserIntent);
+            }
+        });
+        TextView txt= (TextView) findViewById(R.id.textViewAccionFormativa); //txt is object of TextView
+        txt.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                browserIntent.setData(Uri.parse("https://cftic.centrosdeformacion.empleo.madrid.org"));
+                startActivity(browserIntent);
+            }
+        });
     }
 
     public void clickGithub(View view) {

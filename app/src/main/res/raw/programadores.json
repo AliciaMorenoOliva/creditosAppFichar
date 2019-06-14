@@ -141,16 +141,6 @@
     ]
   },
   {
-    "imagen": "gabriela",
-    "nombre": "Gabriela Huertas Naranjo",
-    "social":[
-      {
-        "red": "github",
-        "enlace": "https://github.com/Gaby10"
-      }
-    ]
-  },
-  {
     "imagen": "juanlup",
     "nombre": "Juan Luis Perea López",
     "social":[
@@ -181,6 +171,5 @@
   {
     "imagen": null,
     "nombre": "Carlos A"
-
   }
 ]
