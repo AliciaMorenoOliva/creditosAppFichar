@@ -22,26 +22,13 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView recView;
-
-    private ArrayList<Programador> datos;
-
-    private AdapterCreditos adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recView = (RecyclerView) findViewById(R.id.RecView);
 
-        adaptador = new AdapterCreditos(datos);
-
-        recView.setAdapter(adaptador);
-
-        recView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
-
-        recView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
     }
 
