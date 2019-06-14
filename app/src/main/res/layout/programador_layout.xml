@@ -23,7 +23,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="alicia moreno oliva"
+        android:text=""
         android:textSize="20sp"
 
         android:textStyle="bold" />
@@ -34,7 +34,8 @@
         android:layout_height="60dp"
         android:scaleType="fitCenter"
         android:src="@drawable/github"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:onClick="clickGithub"/>
 
     <ImageButton
         android:id="@+id/linkedin"
@@ -43,6 +44,7 @@
         android:scaleType="fitCenter"
         android:src="@drawable/linkedin"
         android:layout_gravity="center"
+        android:onClick="clickLinkedin"
 
 
         />

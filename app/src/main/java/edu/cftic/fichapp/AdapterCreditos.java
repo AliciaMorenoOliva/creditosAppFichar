@@ -25,7 +25,7 @@ public class AdapterCreditos extends RecyclerView.Adapter<CreditosViewHolder> {
 
         View itemView = inflater.inflate(R.layout.programador_layout,parent, false);
 
-        creditosViewHolder = new CreditosViewHolder(itemView);
+        creditosViewHolder = new CreditosViewHolder(itemView, contexto);
 
         return creditosViewHolder;
 
@@ -35,7 +35,7 @@ public class AdapterCreditos extends RecyclerView.Adapter<CreditosViewHolder> {
     public void onBindViewHolder(@NonNull CreditosViewHolder holder, int position) {
 
         Programador programador = datos.get(position);
-        holder.cargarCreditosEnHolder(programador, contexto);
+        holder.cargarCreditosEnHolder(programador);
 
     }
 
