@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -36,7 +37,7 @@ public class Creditos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creeditos);
-
+ //creamos la variable de Uri en la que va a contener "android.resource://" + el nombre del paquete + / + lo que contiene programadores
         Uri uri = Uri.parse(
                 "android.resource://"
                         + getPackageName()
@@ -71,14 +72,16 @@ public class Creditos extends AppCompatActivity {
         } catch (Exception e) {
             Log.e( this.getClass().getCanonicalName(), "Error al procesar los datos de los creditos.",e);
         }
+        //metemos la imagen
         ImageView cas= (ImageView) findViewById(R.id.imageViewLogoCas); //txt is object of TextView
         cas.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW);
-                browserIntent.setData(Uri.parse("https://www.cas-training.com/"));
+                browserIntent.setData(Uri.parse("https://www.cas-training.com/ "));
                 startActivity(browserIntent);
             }
         });
+        //metemos el texto con el enlace a la pagina cftic
         TextView txt= (TextView) findViewById(R.id.textViewAccionFormativa); //txt is object of TextView
         txt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -87,6 +90,18 @@ public class Creditos extends AppCompatActivity {
                 startActivity(browserIntent);
             }
         });
+        //ponemos la flecha para volver atras
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+//creamos este metodo para que el ActionBar(la flecha hacia atras) funcione bien
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home){
+            finish();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     public void clickGithub(View view) {
